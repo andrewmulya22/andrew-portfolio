@@ -1,6 +1,7 @@
 import { AppShell, Stack, useMantineTheme } from "@mantine/core";
 import NavHeader from "./headerComponents/Header";
 import { HomeComponent } from "./homeComponents/HomeComponent";
+import { EducationComponent } from "./educationComponents/EducationComponent";
 
 export default function AppShellWrapper() {
   const theme = useMantineTheme();
@@ -18,6 +19,7 @@ export default function AppShellWrapper() {
     >
       <Stack>
         <HomeComponent />
+        <EducationComponent />
       </Stack>
     </AppShell>
   );

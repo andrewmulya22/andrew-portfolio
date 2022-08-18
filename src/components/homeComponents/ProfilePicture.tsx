@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
     "@media (max-width: 1050px)": {
       width: "30vh",
     },
-    "@media (max-width: 800px)": {
+    "@media (max-width: 900px)": {
       display: "none",
     },
   },

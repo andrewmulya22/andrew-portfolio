@@ -11,9 +11,16 @@ export default function ProfileIntro() {
         </Text>
       </Title>
       <div className={classes.descriptionWrapper}>
-        <Text size="lg" className={classes.description}>
-          Just a person who tries to improve his programming capability.
-          Interested in learning Web Development and Cloud Computing.
+        <Text size="md" className={classes.description}>
+          Software developer for Mirai Communication Network. <br />
+          I'm aiming to improve my capability in <br />
+          <Text component="span" weight="bold">
+            Web Development
+          </Text>{" "}
+          and{" "}
+          <Text component="span" weight="bold">
+            Cloud Computing.
+          </Text>
         </Text>
       </div>
 
@@ -49,13 +56,16 @@ const useStyles = createStyles((theme) => ({
   },
 
   highlight: {
-    color: theme.colors[theme.primaryColor][4],
+    color:
+      theme.colorScheme === "dark"
+        ? "red"
+        : theme.colors[theme.primaryColor][4],
   },
 
   descriptionWrapper: {
-    width: "35vh",
-    marginLeft: "auto",
-    marginRight: "15vh",
+    alignItems: "center",
+    marginLeft: "6vh",
+    width: "50vh",
     "@media (max-width: 600px)": {
       width: "auto",
       marginLeft: "auto",
@@ -87,6 +97,7 @@ const useStyles = createStyles((theme) => ({
   control: {
     height: 42,
     fontSize: theme.fontSizes.md,
+    color: theme.colorScheme === "dark" ? "red" : "#3B5BDB",
 
     "&:not(:first-of-type)": {
       marginLeft: theme.spacing.md,
