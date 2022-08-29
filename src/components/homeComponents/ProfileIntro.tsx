@@ -42,8 +42,11 @@ const useStyles = createStyles((theme) => ({
     // background: "blue",
     marginRight: "3em",
     marginLeft: "1em",
-    "@media (max-width: 500px)": {
-      marginRight: "1em",
+    "@media (max-width: 800px)": {
+      margin: "auto",
+    },
+    "@media (max-width: 550px)": {
+      margin: "1rem",
     },
   },
   title: {

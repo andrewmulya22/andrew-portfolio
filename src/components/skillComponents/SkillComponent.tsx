@@ -31,16 +31,16 @@ export default function SkillComponent() {
       }}
     >
       <Group position="center" spacing="xs">
-        <ThemeIcon
+        {/* <ThemeIcon
           radius="lg"
           size="xl"
           variant="outline"
           color={theme.colorScheme === "dark" ? "red" : ""}
         >
           <BackpackIcon />
-        </ThemeIcon>
+        </ThemeIcon> */}
         <Title order={1} className={classes.titleStyle}>
-          Dev Stack Skills
+          Dev Stacks
         </Title>
       </Group>
       <Grid

@@ -2,13 +2,11 @@ import {
   Avatar,
   createStyles,
   Grid,
-  keyframes,
   Text,
   useMantineTheme,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useHover } from "@mantine/hooks";
-import { useEffect } from "react";
 
 export default function SkillIcon<FC>({
   url,
@@ -40,13 +38,17 @@ export default function SkillIcon<FC>({
         src={url}
         style={{ margin: "auto" }}
       />
-      <Text
-        color={theme.colorScheme === "dark" ? "red" : "white"}
-        weight={500}
-        style={{ paddingTop: "0.3rem" }}
-      >
-        {text}
-      </Text>
+      {matches ? (
+        ""
+      ) : (
+        <Text
+          color={theme.colorScheme === "dark" ? "red" : "white"}
+          weight={500}
+          style={{ paddingTop: "0.3rem" }}
+        >
+          {text}
+        </Text>
+      )}
     </Grid.Col>
   );
 }

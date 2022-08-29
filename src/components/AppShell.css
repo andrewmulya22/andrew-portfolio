@@ -8,7 +8,7 @@
   }
 
 .hoverClass { 
-  animation: zoomIn 1s;
+  animation: zoomIn 0.5s;
 }
 
 @keyframes zoomIn {
