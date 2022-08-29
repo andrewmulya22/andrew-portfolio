@@ -36,8 +36,6 @@ export default function EducationHistory({
           <Text size="lg" className={classes.textDesc}>
             Universitas Gadjah Mada
           </Text>
-          <br />
-          <br />
         </Timeline.Item>
 
         <Timeline.Item
@@ -51,8 +49,6 @@ export default function EducationHistory({
           <Text size="lg" className={classes.textDesc}>
             SMA Kolese De Britto Yogyakarta
           </Text>
-          <br />
-          <br />
         </Timeline.Item>
 
         <Timeline.Item
@@ -66,8 +62,6 @@ export default function EducationHistory({
           <Text size="lg" className={classes.textDesc}>
             SMP Pangudi Luhur 1 Yogyakarta
           </Text>
-          <br />
-          <br />
         </Timeline.Item>
       </Timeline>
     </Stack>
@@ -76,12 +70,14 @@ export default function EducationHistory({
 
 const useStyles = createStyles((theme) => ({
   stackStyle: {
-    paddingLeft: "20%",
+    paddingLeft: "3em",
+    textAlign: "center",
   },
   textTitle: {
     fontSize: "25px",
     color: theme.colorScheme === "dark" ? "red" : "blue",
     cursor: "pointer",
+    paddingBottom: "5em",
   },
   textDesc: {
     color: theme.colorScheme === "dark" ? "white" : "#868E96",

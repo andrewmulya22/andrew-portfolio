@@ -1,26 +1,23 @@
 import { createStyles, useMantineTheme, Grid } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import ExperienceHistory from "./ExperienceHistory";
 import { useState } from "react";
-import EducationDetails from "./EducationDetails";
-import EducationHistory from "./EducationHistory";
-import InstituteDetails from "./InstituteDetails";
+import ExperienceDetails from "./ExperienceDetails";
 import { useInView } from "react-intersection-observer";
 
-export function EducationComponent() {
+export function ExperienceComponent() {
   const [activeHistory, setActiveHistory] = useState(0);
   const theme = useMantineTheme();
   const { classes } = useStyles();
-  const matches = useMediaQuery("(max-width: 1200px)");
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
   });
 
-  const changeEducationDetails = (id: number) => {
+  const changeExperienceDetails = (id: number) => {
     setActiveHistory(id);
   };
 
   return (
-    <div id="educations" ref={ref}>
+    <div id="experiences" ref={ref}>
       <Grid
         className={[classes.wrapper, `${inView ? "showClass" : ""}`].join(" ")}
         style={{
@@ -30,18 +27,11 @@ export function EducationComponent() {
               : theme.colors.indigo[0],
         }}
       >
-        <Grid.Col span={matches ? 4 : 3} className={classes.educationDivStyle}>
-          <EducationHistory educationHandler={changeEducationDetails} />
+        <Grid.Col span={6} className={classes.experienceDivStyle}>
+          <ExperienceDetails active={activeHistory} />
         </Grid.Col>
-        <Grid.Col span={matches ? 8 : 5} className={classes.educationDivStyle}>
-          <EducationDetails active={activeHistory} />
-        </Grid.Col>
-        <Grid.Col
-          span={4}
-          className={classes.educationDivStyle}
-          style={{ display: matches ? "none" : "flex" }}
-        >
-          <InstituteDetails active={activeHistory} />
+        <Grid.Col span={6} className={classes.experienceDivStyle}>
+          <ExperienceHistory experienceHandler={changeExperienceDetails} />
         </Grid.Col>
       </Grid>
     </div>
@@ -50,6 +40,7 @@ export function EducationComponent() {
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
+    marginTop: "0.3rem",
     minHeight: "90vh",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -59,7 +50,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  educationDivStyle: {
+  experienceDivStyle: {
     display: "flex",
     borderRight:
       theme.colorScheme === "dark"
@@ -72,12 +63,6 @@ const useStyles = createStyles((theme) => ({
       border: 0,
       marginLeft: "auto",
       marginRight: "auto",
-    },
-  },
-
-  instituteDetailStyle: {
-    "@media (max-width: 800px)": {
-      display: "none",
     },
   },
 }));

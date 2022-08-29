@@ -7,14 +7,14 @@ import {
   ThemeIcon,
   useMantineTheme,
 } from "@mantine/core";
-import educations from "../../webData/educations";
+import experiences from "../../webData/experiences";
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import { useMediaQuery } from "@mantine/hooks";
 
-export default function EducationDetails({ active }: { active: number }) {
+export default function ExperienceDetails({ active }: { active: number }) {
   const theme = useMantineTheme();
-  const educationData = educations[active];
-  const activities = educationData.activities;
+  const experienceData = experiences[active];
+  const descriptions = experienceData.jobDescription;
   const { classes } = useStyles();
   const matches = useMediaQuery("(max-width: 750px)");
 
@@ -25,31 +25,25 @@ export default function EducationDetails({ active }: { active: number }) {
         className={classes.textTitle}
         align="center"
       >
-        Brief Description
+        Company
       </Title>
-      <Text align="center" weight="bold" size={matches ? 18 : 25}>
-        {educationData.institution}
-      </Text>
       <Text align="center" weight="bold" size={matches ? 15 : 20}>
-        {educationData.startDate} - {educationData.endDate}
+        {experienceData.companyName}
       </Text>
-      {active === 0 ? (
-        <Text align="center" size={matches ? 15 : 20}>
-          Major - {educationData.major}{" "}
-          <Text component="span" weight="bold">
-            {" "}
-            (GPA : {educationData.finalScore})
-          </Text>
-        </Text>
-      ) : null}
+      <Text align="center" size={matches ? 12 : 15}>
+        {experienceData.address}
+      </Text>
 
       <Title
         order={matches ? 3 : 1}
         className={classes.textTitle}
         align="center"
       >
-        Achievement & Activities
+        Job Description
       </Title>
+      <Text align="center" weight="bold" size={matches ? 15 : 20}>
+        {experienceData.jobTitle}
+      </Text>
       <List
         spacing="xs"
         size="sm"
@@ -65,12 +59,9 @@ export default function EducationDetails({ active }: { active: number }) {
           </ThemeIcon>
         }
       >
-        {activities.map((activity) => (
-          <List.Item key={activity.title}>
-            <Text weight="bold" size={matches ? 15 : 20}>
-              {activity.title}
-            </Text>
-            <Text>{activity.description}</Text>
+        {descriptions.map((description) => (
+          <List.Item key={description}>
+            <Text size={matches ? 15 : 20}>{description}</Text>
           </List.Item>
         ))}
       </List>
@@ -84,19 +75,16 @@ const useStyles = createStyles((theme) => ({
     flex: 1,
     justifyContent: "center",
     padding: "0 3em 5em 3em",
-    // "@media (max-width: 800px)": {
-    //   background: "red",
-    // },
   },
   textTitle: {
     marginTop: "5vh",
     color: theme.colorScheme === "dark" ? "red" : "#3B5BDB",
   },
   listStyle: {
-    paddingLeft: "15vh",
+    paddingLeft: "5vh",
     paddingTop: "2vh",
     "@media (max-width: 800px)": {
-      paddingLeft: "5vh",
+      paddingLeft: "1vh",
     },
   },
   iconStyle: {

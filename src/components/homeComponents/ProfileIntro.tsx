@@ -1,4 +1,5 @@
 import { Button, createStyles, Text, Title } from "@mantine/core";
+import { clamp } from "@mantine/hooks";
 
 export default function ProfileIntro() {
   const { classes } = useStyles();
@@ -10,15 +11,16 @@ export default function ProfileIntro() {
           Andrew Mulya
         </Text>
       </Title>
+
       <div className={classes.descriptionWrapper}>
-        <Text size="md" className={classes.description}>
+        <Text className={classes.description}>
           Software developer for Mirai Communication Network. <br />
           I'm aiming to improve my capability in <br />
-          <Text component="span" weight="bold">
+          <Text component="span" weight="bold" inherit>
             Web Development
           </Text>{" "}
           and{" "}
-          <Text component="span" weight="bold">
+          <Text component="span" weight="bold" inherit>
             Cloud Computing.
           </Text>
         </Text>
@@ -37,22 +39,21 @@ const useStyles = createStyles((theme) => ({
   inner: {
     position: "relative",
     zIndex: 1,
+    // background: "blue",
+    marginRight: "3em",
+    marginLeft: "1em",
+    "@media (max-width: 500px)": {
+      marginRight: "1em",
+    },
   },
   title: {
     fontWeight: 800,
-    fontSize: 40,
+    fontSize: clamp(15, 50, 70),
     letterSpacing: -1,
-    paddingLeft: "10vh",
-    paddingRight: "15vh",
     color: theme.white,
     marginBottom: theme.spacing.xs,
     textAlign: "right",
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-
-    "@media (max-width: 700px)": {
-      fontSize: 28,
-      textAlign: "left",
-    },
   },
 
   highlight: {
@@ -64,51 +65,24 @@ const useStyles = createStyles((theme) => ({
 
   descriptionWrapper: {
     alignItems: "center",
-    marginLeft: "6vh",
-    width: "50vh",
-    "@media (max-width: 600px)": {
-      width: "auto",
-      marginLeft: "auto",
-      marginRight: "5vh",
-    },
   },
 
   description: {
+    fontSize: clamp(10, 20, 30),
     color: theme.colors.gray[0],
     textAlign: "right",
-
-    "@media (max-width: 700px)": {
-      paddingLeft: "10vh",
-      fontSize: theme.fontSizes.md,
-      textAlign: "left",
-    },
+    wordWrap: "break-word",
   },
 
   controls: {
     marginTop: theme.spacing.xl * 5,
     display: "flex",
-    justifyContent: "flex-end",
-    paddingLeft: "10vh",
-    paddingRight: "30vh",
-
-    "@media (max-width: 1200px)": {},
+    justifyContent: "center",
   },
 
   control: {
     height: 42,
     fontSize: theme.fontSizes.md,
     color: theme.colorScheme === "dark" ? "red" : "#3B5BDB",
-
-    "&:not(:first-of-type)": {
-      marginLeft: theme.spacing.md,
-    },
-
-    "@media (max-width: 700px)": {
-      "&:not(:first-of-type)": {
-        marginTop: theme.spacing.md,
-        marginLeft: "auto",
-        marginRight: "auto",
-      },
-    },
   },
 }));
