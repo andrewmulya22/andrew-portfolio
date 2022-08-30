@@ -16,7 +16,8 @@ export default function SkillIcon<FC>({
   text: string;
 }) {
   const { classes } = useStyles();
-  const matches = useMediaQuery("(max-width: 500px)");
+  const widthMatches = useMediaQuery("(max-width: 500px)");
+  const heightMatches = useMediaQuery("(max-height: 700px)");
   const theme = useMantineTheme();
   const { hovered, ref } = useHover();
   return (
@@ -33,12 +34,14 @@ export default function SkillIcon<FC>({
       ref={ref}
     >
       <Avatar
-        size={matches ? "lg" : "xl"}
+        size={widthMatches ? "lg" : heightMatches ? "lg" : "xl"}
         radius="lg"
         src={url}
         style={{ margin: "auto" }}
       />
-      {matches ? (
+      {widthMatches ? (
+        ""
+      ) : heightMatches ? (
         ""
       ) : (
         <Text

@@ -81,7 +81,7 @@ const useStyles = createStyles((theme) => ({
   },
   wrapper: {
     marginTop: "0.3rem",
-    maxWidth: "60vh",
+    maxWidth: "70vh",
     margin: "auto",
     padding: "1vh",
     backgroundSize: "cover",

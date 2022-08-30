@@ -72,6 +72,10 @@ const useStyles = createStyles((theme) => ({
   stackStyle: {
     paddingLeft: "3em",
     textAlign: "center",
+    "@media (max-width: 450px)": {
+      paddingLeft: 0,
+      paddingRight: "15vh",
+    },
   },
   textTitle: {
     fontSize: "25px",
