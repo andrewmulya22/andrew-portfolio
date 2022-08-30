@@ -20,7 +20,7 @@ export default function ExperienceHistory({
   return (
     <Stack className={classes.stackStyle}>
       <Timeline
-        active={3}
+        active={active}
         lineWidth={3}
         bulletSize={50}
         color={theme.colorScheme === "dark" ? "red" : "blue"}
@@ -30,6 +30,7 @@ export default function ExperienceHistory({
           className={classes.textTitle}
           onClick={() => {
             experienceHandler(0);
+            setActive(0);
           }}
           bullet={
             <Avatar
@@ -51,6 +52,7 @@ export default function ExperienceHistory({
           title="Cyber Security Staff"
           onClick={() => {
             experienceHandler(1);
+            setActive(1);
           }}
           bullet={
             <Avatar
@@ -72,6 +74,7 @@ export default function ExperienceHistory({
           title="Backend Programmer (Intern)"
           onClick={() => {
             experienceHandler(2);
+            setActive(2);
           }}
           bullet={
             <Avatar
@@ -93,6 +96,7 @@ export default function ExperienceHistory({
           title="Backend Programmer (Intern)"
           onClick={() => {
             experienceHandler(3);
+            setActive(3);
           }}
           bullet={
             <Avatar
