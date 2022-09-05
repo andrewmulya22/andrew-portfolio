@@ -8,7 +8,7 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import { useHover } from "@mantine/hooks";
 
-export default function SkillIcon<FC>({
+export default function SkillIcon({
   url,
   text,
 }: {

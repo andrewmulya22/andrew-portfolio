@@ -3,12 +3,9 @@ import {
   useMantineTheme,
   Grid,
   Title,
-  ThemeIcon,
   Group,
 } from "@mantine/core";
 import { useInView } from "react-intersection-observer";
-import { BackpackIcon } from "@radix-ui/react-icons";
-import { useMediaQuery } from "@mantine/hooks";
 import SkillIcon from "./SkillIcon";
 import skills from "../../webData/skills";
 

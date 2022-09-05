@@ -1,14 +1,7 @@
-import {
-  createStyles,
-  Stack,
-  Text,
-  Title,
-  useMantineTheme,
-} from "@mantine/core";
+import { createStyles, Stack, Text, Title } from "@mantine/core";
 import educations from "../../webData/educations";
 
 export default function InstituteDetails({ active }: { active: number }) {
-  const theme = useMantineTheme();
   const educationData = educations[active];
   const { classes } = useStyles();
   return (

@@ -8,7 +8,7 @@ export function ExperienceComponent() {
   const [activeHistory, setActiveHistory] = useState(0);
   const theme = useMantineTheme();
   const { classes } = useStyles();
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.1,
   });
 

@@ -13,7 +13,7 @@ export default function ButtonGroup() {
   const { classes } = useStyles();
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
-  const [opened, { toggle, close }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(false);
 
   return (
     <>

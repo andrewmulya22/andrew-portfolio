@@ -11,7 +11,7 @@ export function EducationComponent() {
   const theme = useMantineTheme();
   const { classes } = useStyles();
   const matches = useMediaQuery("(max-width: 1200px)");
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.1,
   });
 

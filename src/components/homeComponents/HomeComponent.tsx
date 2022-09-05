@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 export function HomeComponent() {
   const theme = useMantineTheme();
   const { classes } = useStyles();
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.1,
   });
 
