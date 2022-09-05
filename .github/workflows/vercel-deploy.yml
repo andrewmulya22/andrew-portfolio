@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm run build
+      - name: Build
+        run: |-
+          npm install
+          npm run build
 
       - uses: amondnet/vercel-action@v20 #deploy
         with:
