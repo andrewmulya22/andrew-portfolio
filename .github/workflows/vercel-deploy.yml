@@ -8,11 +8,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
-        run: |-
-          npm install
-          npm run build
+      # - uses: actions/checkout@v2
+      # - name: Build
+      #   run: |-
+      #     npm install
+      #     npm run build
 
       - uses: amondnet/vercel-action@v20 #deploy
         with:
@@ -20,4 +20,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./build
+          working-directory: ./
